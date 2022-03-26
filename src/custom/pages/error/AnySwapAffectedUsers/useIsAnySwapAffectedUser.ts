@@ -12,9 +12,8 @@ import { BigNumber } from '@ethersproject/bignumber'
 const WETH_ADDRESS = WETH[ChainId.MAINNET].address
 const PERI_ADDRESS = '0x5d30aD9C6374Bf925D0A75454fa327AACf778492'
 const MATIC_ADDRESS = '0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0'
-const WBNB_ADDRESS = '0x418d75f65a02b3d53b2418fb8e1fe493759c7605'
 
-const AFFECTED_TOKENS = [WETH_ADDRESS, PERI_ADDRESS, MATIC_ADDRESS, WBNB_ADDRESS] // relevant tokens for the check
+const AFFECTED_TOKENS = [WETH_ADDRESS, PERI_ADDRESS, MATIC_ADDRESS] // relevant tokens for the check
 
 const ERC20_INTERFACE = new Interface(ERC20_ABI) as Erc20Interface
 const ANYSWAP_V4_CONTRACT = '0x6b7a87899490EcE95443e979cA9485CBE7E71522'

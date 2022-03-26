@@ -4,7 +4,7 @@ const ETHERSCAN_PREFIXES: { [chainId: number]: string } = {
   [SupportedChainId.MAINNET]: '',
   [SupportedChainId.ROPSTEN]: 'ropsten.',
   [SupportedChainId.RINKEBY]: 'rinkeby.',
-  [SupportedChainId.GOERLI]: 'goerli.',
+  // [SupportedChainId.GOERLI]: 'goerli.',
   [SupportedChainId.KOVAN]: 'kovan.',
   [SupportedChainId.OPTIMISM]: 'optimistic.',
   [SupportedChainId.OPTIMISTIC_KOVAN]: 'kovan-optimistic.',
@@ -35,6 +35,19 @@ export function getExplorerLink(chainId: number, data: string, type: ExplorerDat
         return `https://arbiscan.io/block/${data}`
       default:
         return `https://arbiscan.io/`
+    }
+  }
+  if (chainId === SupportedChainId.BSCTEST) {
+    switch (type) {
+      case ExplorerDataType.TRANSACTION:
+        return `https://testnet.bscscan.com/tx/${data}`
+      case ExplorerDataType.ADDRESS:
+      case ExplorerDataType.TOKEN:
+        return `https://testnet.bscscan.com/address/${data}`
+      case ExplorerDataType.BLOCK:
+        return `https://testnet.bscscan.com//block/${data}`
+      default:
+        return `https://testnet.bscscan.com/`
     }
   }
 

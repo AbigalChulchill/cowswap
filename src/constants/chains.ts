@@ -13,6 +13,7 @@ export enum SupportedChainId {
   ARBITRUM_ONE = 42161,
   ARBITRUM_RINKEBY = 421611,
   OPTIMISM = 10,
+  BSCTEST = 97,
   OPTIMISTIC_KOVAN = 69,
 }
 
@@ -22,6 +23,7 @@ export const ALL_SUPPORTED_CHAIN_IDS: SupportedChainId[] = [
   SupportedChainId.RINKEBY,
   SupportedChainId.GOERLI,
   SupportedChainId.KOVAN,
+  SupportedChainId.BSCTEST,
 
   SupportedChainId.ARBITRUM_ONE,
   SupportedChainId.ARBITRUM_RINKEBY,
@@ -33,7 +35,8 @@ export const L1_CHAIN_IDS = [
   SupportedChainId.MAINNET,
   SupportedChainId.ROPSTEN,
   SupportedChainId.RINKEBY,
-  SupportedChainId.GOERLI,
+  SupportedChainId.BSCTEST,
+  // SupportedChainId.GOERLI,
   SupportedChainId.KOVAN,
 ] as const
 
@@ -110,6 +113,13 @@ export const CHAIN_INFO: ChainInfo = {
     label: 'Rinkeby',
     nativeCurrency: { name: 'Rinkeby ETH', symbol: 'rinkETH', decimals: 18 },
   },
+  [SupportedChainId.BSCTEST]: {
+    docs: 'https://docs.uniswap.org/',
+    explorer: 'https://testnet.bscscan.com/',
+    infoLink: 'https://info.uniswap.org/#/',
+    label: 'Bsc Test',
+    nativeCurrency: { name: 'tBNB', symbol: 'TBNB', decimals: 18 },
+  },
   [SupportedChainId.ROPSTEN]: {
     docs: 'https://docs.uniswap.org/',
     explorer: 'https://ropsten.etherscan.io/',
@@ -124,13 +134,13 @@ export const CHAIN_INFO: ChainInfo = {
     label: 'Kovan',
     nativeCurrency: { name: 'Kovan ETH', symbol: 'kovETH', decimals: 18 },
   },
-  [SupportedChainId.GOERLI]: {
-    docs: 'https://docs.uniswap.org/',
-    explorer: 'https://goerli.etherscan.io/',
-    infoLink: 'https://info.uniswap.org/#/',
-    label: 'Görli',
-    nativeCurrency: { name: 'Görli ETH', symbol: 'görETH', decimals: 18 },
-  },
+  // [SupportedChainId.GOERLI]: {
+  //   docs: 'https://docs.uniswap.org/',
+  //   explorer: 'https://goerli.etherscan.io/',
+  //   infoLink: 'https://info.uniswap.org/#/',
+  //   label: 'Görli',
+  //   nativeCurrency: { name: 'Görli ETH', symbol: 'görETH', decimals: 18 },
+  // },
   [SupportedChainId.OPTIMISM]: {
     blockWaitMsBeforeWarning: ms`10m`,
     bridge: 'https://gateway.optimism.io/',

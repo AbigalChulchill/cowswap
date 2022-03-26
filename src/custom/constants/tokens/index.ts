@@ -1,6 +1,7 @@
 import { ChainId } from '@uniswap/sdk'
 import { WETH9, Token } from '@uniswap/sdk-core'
 import { DAI_RINKEBY, USDC_RINKEBY, USDT_RINKEBY, WBTC_RINKEBY } from 'utils/rinkeby/constants'
+import { USDC_BSCTEST } from '@src/custom/utils/bsctest/constants'
 import { DAI, USDC as USDC_MAINNET, USDT, WBTC } from '@src/constants/tokens'
 import { USDC_XDAI, /*USDT_XDAI,*/ WBTC_XDAI, WETH_XDAI, WXDAI } from 'utils/xdai/constants'
 import { SupportedChainId } from 'constants/chains'
@@ -103,11 +104,20 @@ const GNO_RINKEBY = new Token(
   'GNO',
   'Gnosis'
 )
+const GNO_BSCTEST = new Token(
+  SupportedChainId.BSCTEST,
+  '0xd0dab4e640d95e9e8a47545598c33e31bdb53c7c',
+  18,
+  'GNO',
+  'Gnosis'
+)
 
 export const GNO: Record<SupportedChainId, Token> = {
   [SupportedChainId.MAINNET]: GNO_MAINNET,
   [SupportedChainId.XDAI]: GNO_XDAI,
   [SupportedChainId.RINKEBY]: GNO_RINKEBY,
+  [SupportedChainId.BSCTEST]: GNO_BSCTEST,
+  // [SupportedChainId.GOERLI]: GNO_BSCTEST,
 }
 
 /**
@@ -117,6 +127,8 @@ export const USDC_BY_CHAIN: Record<SupportedChainId, Token> = {
   [SupportedChainId.MAINNET]: USDC_MAINNET,
   [SupportedChainId.XDAI]: USDC_XDAI,
   [SupportedChainId.RINKEBY]: USDC_RINKEBY,
+  [SupportedChainId.BSCTEST]: USDC_BSCTEST,
+  // [SupportedChainId.GOERLI]: USDC_BSCTEST,
 }
 
 export const ADDRESS_IMAGE_OVERRIDE = {

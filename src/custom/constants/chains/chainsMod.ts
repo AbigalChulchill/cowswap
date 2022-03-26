@@ -6,6 +6,8 @@
 import EthereumLogo from 'assets/cow-swap/network-mainnet-logo.svg' // mod
 import RinkebyLogo from 'assets/cow-swap/network-rinkeby-logo.svg' // mod
 import GnosisChainLogo from 'assets/cow-swap/network-gnosis-chain-logo.svg' // mod
+import bnbLogoUrl from 'assets/cow-swap/network-bsc-chain-logo.svg'
+
 export * from '@src/constants/chains'
 
 export enum SupportedChainId {
@@ -19,6 +21,8 @@ export enum SupportedChainId {
   // ARBITRUM_RINKEBY = 421611,
   // OPTIMISM = 10,
   // OPTIMISTIC_KOVAN = 69,
+
+  BSCTEST = 97,
 
   XDAI = 100,
 }
@@ -36,6 +40,8 @@ export const ALL_SUPPORTED_CHAIN_IDS: SupportedChainId[] = [
   // SupportedChainId.OPTIMISTIC_KOVAN,
 
   SupportedChainId.XDAI,
+
+  SupportedChainId.BSCTEST,
 ]
 
 export const L1_CHAIN_IDS = [
@@ -45,6 +51,7 @@ export const L1_CHAIN_IDS = [
   // SupportedChainId.GOERLI,
   // SupportedChainId.KOVAN,
   SupportedChainId.XDAI,
+  SupportedChainId.BSCTEST,
 ] as const
 
 export type SupportedL1ChainId = typeof L1_CHAIN_IDS[number]
@@ -121,6 +128,14 @@ export const CHAIN_INFO: ChainInfo = {
     nativeCurrency: { name: 'Rinkeby ETH', symbol: 'rinkETH', decimals: 18 },
     logoUrl: RinkebyLogo, // mod
   },
+  // [SupportedChainId.GOERLI]: {
+  //   docs: 'https://docs.uniswap.org/',
+  //   explorer: 'https://goerli.etherscan.io/',
+  //   infoLink: 'https://info.uniswap.org/#/',
+  //   label: 'Görli',
+  //   nativeCurrency: { name: 'Görli ETH', symbol: 'görETH', decimals: 18 },
+  //   logoUrl: EthereumLogo, // mod
+  // },
   /* [SupportedChainId.ROPSTEN]: {
     docs: 'https://docs.uniswap.org/',
     explorer: 'https://ropsten.etherscan.io/',
@@ -175,6 +190,14 @@ export const CHAIN_INFO: ChainInfo = {
     logoUrl: GnosisChainLogo, // mod
     nativeCurrency: { name: 'xDai', symbol: 'XDAI', decimals: 18 },
   },
+  [SupportedChainId.BSCTEST]: {
+    docs: 'https://docs.uniswap.org/',
+    explorer: 'https://explorer.binance.org/',
+    infoLink: '',
+    label: 'Bsc Test',
+    logoUrl: bnbLogoUrl,
+    nativeCurrency: { name: 'BSC Testnet', symbol: 'tBNB', decimals: 18 },
+  },
 }
 
 export const ARBITRUM_HELP_CENTER_LINK = 'https://help.uniswap.org/en/collections/3137787-uniswap-on-arbitrum'
@@ -190,6 +213,7 @@ export const NETWORK_LABELS: { [chainId in SupportedChainId | number]: string } 
   // [SupportedChainId.KOVAN]: 'Kovan',
   // [SupportedChainId.XDAI]: 'XDai',
   [SupportedChainId.XDAI]: 'Gnosis Chain', // mod
+  [SupportedChainId.BSCTEST]: 'Bsc Test',
   //   [SupportedChainId.ARBITRUM_KOVAN]: 'kArbitrum',
   //   [SupportedChainId.ARBITRUM_ONE]: 'Arbitrum One',
 }

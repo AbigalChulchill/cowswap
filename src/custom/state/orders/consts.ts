@@ -5,6 +5,8 @@ export const ContractDeploymentBlocks: Partial<Record<ChainId, number>> = {
   [ChainId.MAINNET]: 11469934,
   [ChainId.RINKEBY]: 7724701,
   [ChainId.XDAI]: 13566914,
+  [ChainId.BSCTEST]: 7724701,
+  // [ChainId.GOERLI]: 7724701,
 }
 
 export const OPERATOR_API_POLL_INTERVAL = 2000 // in ms

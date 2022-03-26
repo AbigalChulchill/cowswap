@@ -39,7 +39,17 @@ const EMPTY_STORE = {
     activeListUrls: undefined,
     gpUnsupportedTokens: {},
   },
+  // [ChainId.GOERLI]: {
+  //   byUrl: {},
+  //   activeListUrls: undefined,
+  //   gpUnsupportedTokens: {},
+  // },
   [ChainId.XDAI]: {
+    byUrl: {},
+    activeListUrls: undefined,
+    gpUnsupportedTokens: {},
+  },
+  [ChainId.BSCTEST]: {
     byUrl: {},
     activeListUrls: undefined,
     gpUnsupportedTokens: {},

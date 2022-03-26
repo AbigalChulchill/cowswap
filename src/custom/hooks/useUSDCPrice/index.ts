@@ -33,7 +33,9 @@ const STABLECOIN_AMOUNT_OUT: { [chain in SupportedChainId]: CurrencyAmount<Token
   // MOD: lowers threshold from 100k to 100
   [SupportedChainId.MAINNET]: CurrencyAmount.fromRawAmount(USDC, 100e6),
   [SupportedChainId.RINKEBY]: CurrencyAmount.fromRawAmount(USDC, 100e6),
+  // [SupportedChainId.GOERLI]: CurrencyAmount.fromRawAmount(USDC, 100e6),
   [SupportedChainId.XDAI]: CurrencyAmount.fromRawAmount(USDC_XDAI, 10_000e6),
+  [SupportedChainId.BSCTEST]: CurrencyAmount.fromRawAmount(USDC, 100e6),
 }
 
 /**

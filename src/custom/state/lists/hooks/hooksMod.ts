@@ -38,8 +38,10 @@ type Mutable<T> = {
  */
 export const EMPTY_LIST: TokenAddressMap = {
   [ChainId.RINKEBY]: {},
+  // [ChainId.GOERLI]: {},
   [ChainId.MAINNET]: {},
   [ChainId.XDAI]: {},
+  [ChainId.BSCTEST]: {},
 }
 
 const listCache: WeakMap<TokenList, TokenAddressMap> | null =
@@ -95,8 +97,7 @@ export function useAllLists(): AppState['lists'][ChainId]['byUrl'] {
   // MOD: adds { chainId } support to the hooks
   const { chainId: connectedChainId } = useActiveWeb3React()
   const chainId = supportedChainId(connectedChainId) ?? DEFAULT_NETWORK_FOR_LISTS
-  // return useAppSelector<AppState, AppState['lists']['byUrl']>(state => state.lists.byUrl)
-  return useAppSelector((state) => state.lists[chainId].byUrl)
+  return useAppSelector((state) => state.lists[chainId]?.byUrl)
 }
 
 /**

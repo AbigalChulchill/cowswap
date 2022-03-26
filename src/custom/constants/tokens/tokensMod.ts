@@ -6,6 +6,7 @@ import { SupportedChainId } from 'constants/chains'
 // MOD
 import { WETH9_EXTENDED as WETH9_EXTENDED_UNI } from '@src/constants/tokens'
 import { WXDAI, XDAI_NAME, XDAI_SYMBOL } from 'utils/xdai/constants'
+import { WETH_BSC } from '@src/custom/utils/bsctest/constants'
 
 export * from '@src/constants/tokens'
 
@@ -154,6 +155,7 @@ export const UNI: { [chainId: number]: Token } = {
 export const WETH9_EXTENDED: { [chainId: number]: Token } = {
   ...WETH9_EXTENDED_UNI,
   [SupportedChainId.XDAI]: WXDAI,
+  [SupportedChainId.BSCTEST]: WETH_BSC,
 }
 
 export class GpEther extends NativeCurrency {

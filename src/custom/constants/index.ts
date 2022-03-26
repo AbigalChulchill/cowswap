@@ -49,12 +49,16 @@ export const GP_SETTLEMENT_CONTRACT_ADDRESS: Partial<Record<number, string>> = {
   [ChainId.MAINNET]: GPv2Settlement[ChainId.MAINNET].address,
   [ChainId.RINKEBY]: GPv2Settlement[ChainId.RINKEBY].address,
   [ChainId.XDAI]: GPv2Settlement[ChainId.XDAI].address,
+  // @ts-ignore
+  [ChainId.BSCTEST]: GPv2Settlement[ChainId.BSCTEST].address,
 }
 
 export const GP_VAULT_RELAYER: Partial<Record<number, string>> = {
   [ChainId.MAINNET]: GPv2VaultRelayer[ChainId.MAINNET].address,
   [ChainId.RINKEBY]: GPv2VaultRelayer[ChainId.RINKEBY].address,
   [ChainId.XDAI]: GPv2VaultRelayer[ChainId.XDAI].address,
+  // @ts-ignore
+  [ChainId.BSCTEST]: GPv2VaultRelayer[ChainId.BSCTEST].address,
 }
 
 export const V_COW_CONTRACT_ADDRESS: Record<number, string> = {
@@ -78,6 +82,7 @@ export const NATIVE_CURRENCY_BUY_TOKEN: { [chainId in ChainId | number]: Token }
   // [ChainId.GOERLI]: new Token(ChainId.GOERLI, NATIVE_CURRENCY_BUY_ADDRESS, 18, 'ETH', 'Ether'),
   // [ChainId.KOVAN]: new Token(ChainId.KOVAN, NATIVE_CURRENCY_BUY_ADDRESS, 18, 'ETH', 'Ether'),
   [ChainId.XDAI]: new Token(ChainId.XDAI, NATIVE_CURRENCY_BUY_ADDRESS, 18, 'xDAI', 'xDAI'),
+  [ChainId.BSCTEST]: new Token(ChainId.BSCTEST, NATIVE_CURRENCY_BUY_ADDRESS, 18, 'BNB', 'Ether'),
 }
 
 export const ORDER_ID_SHORT_LENGTH = 8
@@ -111,7 +116,10 @@ export const GAS_FEE_ENDPOINTS = {
   // [ChainId.GOERLI]: 'https://safe-relay.goerli.gnosis.io/api/v1/gas-station/',
   // no kovan = main
   // [ChainId.KOVAN]: 'https://safe-relay.kovan.gnosis.io/api/v1/gas-station/',
+
   [ChainId.XDAI]: 'https://blockscout.com/xdai/mainnet/api/v1/gas-price-oracle',
+
+  [ChainId.BSCTEST]: 'https://safe-relay.rinkeby.gnosis.io/api/v1/gas-station/',
 }
 
 export const UNSUPPORTED_TOKENS_FAQ_URL = '/faq#what-token-pairs-does-cowswap-allow-to-trade'

@@ -26,6 +26,9 @@ const BA_LIST = 'https://raw.githubusercontent.com/The-Blockchain-Association/se
 const RINKEBY_LIST =
   'https://raw.githubusercontent.com/gnosis/gp-swap-ui/master/src/custom/tokens/rinkeby-token-list.json'
 
+// BSCTEST Default
+const BSCTEST_LIST = '../tokens/bsctest-token-list.json'
+
 // XDAI Default
 const HONEY_SWAP_XDAI = 'https://tokens.honeyswap.org'
 
@@ -36,6 +39,7 @@ export const UNSUPPORTED_LIST_URLS: NetworkLists = {
   // [ChainId.ROPSTEN]: [BA_LIST],
   // [ChainId.GOERLI]: [BA_LIST],
   [ChainId.XDAI]: [BA_LIST],
+  [ChainId.BSCTEST]: [BA_LIST],
 }
 
 function buildNetworkDefaultLists({ networkLists, chainId }: { chainId: ChainId; networkLists: string[] }) {
@@ -83,6 +87,10 @@ export const DEFAULT_LIST_OF_LISTS_BY_NETWORK: NetworkLists = {
     chainId: ChainId.XDAI,
     networkLists: [HONEY_SWAP_XDAI],
   }),
+  [ChainId.BSCTEST]: buildNetworkDefaultLists({
+    chainId: ChainId.BSCTEST,
+    networkLists: [BSCTEST_LIST],
+  }),
 }
 
 // default lists to be 'active' aka searched across
@@ -93,6 +101,7 @@ export const DEFAULT_ACTIVE_LIST_URLS_BY_NETWORK: NetworkLists = {
   // [ChainId.ROPSTEN]: [GEMINI_LIST],
   [ChainId.XDAI]: [HONEY_SWAP_XDAI],
   // [ChainId.GOERLI]: [GEMINI_LIST],
+  [ChainId.BSCTEST]: [BSCTEST_LIST],
 }
 
 // Set what we want as the default list when no chain id available: default = MAINNET

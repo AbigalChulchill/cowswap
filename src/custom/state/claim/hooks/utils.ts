@@ -96,6 +96,10 @@ function _repoNetworkIdMapping(id: SupportedChainId): string {
       return 'mainnet'
     case SupportedChainId.RINKEBY:
       return 'rinkeby'
+    // case SupportedChainId.GOERLI:
+    //   return 'görli'
+    case SupportedChainId.BSCTEST:
+      return 'bsc-test'
     case SupportedChainId.XDAI:
       return 'gnosis-chain'
     default:

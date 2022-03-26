@@ -4,11 +4,13 @@ import { SupportedChainId } from 'constants/chains'
 
 export const OVERLAY_READY = 'OVERLAY_READY'
 
-type FormaticSupportedChains = SupportedChainId.MAINNET | SupportedChainId.RINKEBY
+type FormaticSupportedChains = SupportedChainId.MAINNET | SupportedChainId.RINKEBY | SupportedChainId.BSCTEST
 
 const CHAIN_ID_NETWORK_ARGUMENT: Partial<Record<SupportedChainId, string | undefined>> = {
   [SupportedChainId.MAINNET]: undefined,
   [SupportedChainId.RINKEBY]: 'rinkeby',
+  // [SupportedChainId.GOERLI]: 'görli',
+  [SupportedChainId.BSCTEST]: 'bscTest',
 }
 
 export class FortmaticConnector extends FortmaticConnectorCore {

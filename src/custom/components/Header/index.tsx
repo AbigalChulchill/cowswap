@@ -53,6 +53,7 @@ export const NETWORK_LABELS: { [chainId in ChainId]?: string } = {
   // [ChainId.GOERLI]: 'Görli',
   // [ChainId.KOVAN]: 'Kovan',
   [ChainId.XDAI]: 'Gnosis Chain',
+  [ChainId.BSCTEST]: 'Bsc Test',
 }
 
 const CHAIN_CURRENCY_LABELS: { [chainId in ChainId]?: string } = {

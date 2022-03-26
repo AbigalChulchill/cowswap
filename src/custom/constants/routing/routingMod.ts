@@ -27,6 +27,7 @@ import {
 
 import { USDC_XDAI, /* USDT_XDAI, */ WBTC_XDAI, WETH_XDAI } from 'utils/xdai/constants'
 import { DAI_RINKEBY, USDC_RINKEBY, USDT_RINKEBY } from 'utils/rinkeby/constants'
+import { USDT_BSCTEST } from 'utils/bsctest/constants'
 
 /* type ChainTokenList = {
   readonly [chainId: number]: Token[]
@@ -124,6 +125,11 @@ export const COMMON_BASES: ChainCurrencyList = {
     WETH9_EXTENDED[100],
     WETH_XDAI,
   ], // mod
+  [SupportedChainId.BSCTEST]: [
+    // ExtendedEther.onChain(SupportedChainId.RINKEBY),
+    WETH9_EXTENDED[SupportedChainId.BSCTEST],
+    USDT_BSCTEST,
+  ],
   // [SupportedChainId.ARBITRUM_ONE]: [
   //   ExtendedEther.onChain(SupportedChainId.ARBITRUM_ONE),
   //   WETH9_EXTENDED[SupportedChainId.ARBITRUM_ONE],

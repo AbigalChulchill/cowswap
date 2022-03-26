@@ -37,6 +37,8 @@ const DEFAULT_CLAIM_INFO_PER_CHAIN: ClaimInfoPerChain = {
   [SupportedChainId.MAINNET]: { ...DEFAULT_CLAIM_INFO },
   [SupportedChainId.XDAI]: { ...DEFAULT_CLAIM_INFO },
   [SupportedChainId.RINKEBY]: { ...DEFAULT_CLAIM_INFO },
+  // [SupportedChainId.GOERLI]: { ...DEFAULT_CLAIM_INFO },
+  [SupportedChainId.BSCTEST]: { ...DEFAULT_CLAIM_INFO },
 }
 
 type ClaimInfoPerAccount = Record<string, ClaimInfoPerChain>

@@ -163,35 +163,21 @@ export function useSingleContractMultipleData(
 ): CallState[] {
   const fragment = useMemo(() => contract?.interface?.getFunction(methodName), [contract, methodName])
 
-  // encode callDatas
-  const callDatas = useMemo(
-    () =>
-      contract && fragment
-        ? callInputs.map<string | undefined>((callInput) =>
-            isValidMethodArgs(callInput) ? contract.interface.encodeFunctionData(fragment, callInput) : undefined
-          )
-        : [],
-    [contract, fragment, callInputs]
-  )
-
-  const gasRequired = options?.gasRequired
   const blocksPerFetch = options?.blocksPerFetch
+  const gasRequired = options?.gasRequired
 
-  // encode calls
   const calls = useMemo(
     () =>
-      contract
-        ? callDatas.map<Call | undefined>((callData) =>
-            callData
-              ? {
-                  address: contract.address,
-                  callData,
-                  gasRequired,
-                }
-              : undefined
-          )
+      contract && fragment && callInputs?.length > 0 && callInputs.every((inputs) => isValidMethodArgs(inputs))
+        ? callInputs.map<Call>((inputs) => {
+            return {
+              address: contract.address,
+              callData: contract.interface.encodeFunctionData(fragment, inputs),
+              ...(gasRequired ? { gasRequired } : {}),
+            }
+          })
         : [],
-    [contract, callDatas, gasRequired]
+    [contract, fragment, callInputs, gasRequired]
   )
 
   const results = useCallsData(calls, blocksPerFetch ? { blocksPerFetch } : undefined)
