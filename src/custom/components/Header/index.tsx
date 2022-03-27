@@ -58,6 +58,7 @@ export const NETWORK_LABELS: { [chainId in ChainId]?: string } = {
 
 const CHAIN_CURRENCY_LABELS: { [chainId in ChainId]?: string } = {
   [ChainId.XDAI]: 'xDAI',
+  [ChainId.BSCTEST]: 'tBNB',
 }
 
 export interface LinkType {

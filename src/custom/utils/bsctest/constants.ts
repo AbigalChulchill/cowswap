@@ -3,6 +3,9 @@ import { SupportedChainId as ChainId } from 'constants/chains'
 
 export const DAI_BSCTEST = new Token(ChainId.BSCTEST, '0x5592ec0cfb4dbc12d3ab100b257153436a1f0fea', 18, 'DAI', 'DAI')
 
+export const BSCTEST_SYMBOL = 'TBNB'
+export const BSCTEST_NAME = 'tBnb'
+
 export const USDT_BSCTEST = new Token(
   ChainId.BSCTEST,
   '0x78867BbEeF44f2326bF8DDd1941a4439382EF2A7',

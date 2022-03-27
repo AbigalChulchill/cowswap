@@ -5,13 +5,14 @@ import styled from 'styled-components/macro'
 
 import EthereumLogo from 'assets/images/ethereum-logo.png'
 import xDaiLogo from 'assets/cow-swap/xdai.png'
+import LogoBNB from 'assets/cow-swap/bnb.svg'
 import useHttpLocations from 'hooks/useHttpLocations'
 import { WrappedTokenInfo } from 'state/lists/wrappedTokenInfo'
 import Logo from 'components/Logo'
 import { ADDRESS_IMAGE_OVERRIDE } from 'constants/tokens'
 
 // type Network = 'ethereum' | 'arbitrum' | 'optimism'
-type Network = 'ethereum' | 'xdai'
+type Network = 'ethereum' | 'xdai' | 'bsc'
 
 function chainIdToNetworkName(networkId: SupportedChainId): Network {
   switch (networkId) {
@@ -19,6 +20,8 @@ function chainIdToNetworkName(networkId: SupportedChainId): Network {
       return 'ethereum'
     case SupportedChainId.XDAI: // mod
       return 'xdai'
+    case SupportedChainId.BSCTEST: // mod
+      return 'bsc'
     // case SupportedChainId.ARBITRUM_ONE:
     //   return 'arbitrum'
     // case SupportedChainId.OPTIMISM:
@@ -88,6 +91,8 @@ export default function CurrencyLogo({
   if (currency?.isNative) {
     return chainIdToNetworkName(currency.chainId) === 'ethereum' ? (
       <StyledEthereumLogo src={EthereumLogo} alt="ethereum logo" size={size} style={style} {...rest} />
+    ) : chainIdToNetworkName(currency.chainId) === 'bsc' ? (
+      <StyledLogo srcs={[LogoBNB]} alt="bsc logo" size={size} style={style} {...rest} />
     ) : (
       <StyledLogo srcs={[xDaiLogo]} alt="xdai logo" size={size} style={style} {...rest} />
     )

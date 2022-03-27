@@ -6,7 +6,7 @@ import { SupportedChainId } from 'constants/chains'
 // MOD
 import { WETH9_EXTENDED as WETH9_EXTENDED_UNI } from '@src/constants/tokens'
 import { WXDAI, XDAI_NAME, XDAI_SYMBOL } from 'utils/xdai/constants'
-import { WETH_BSC } from '@src/custom/utils/bsctest/constants'
+import { WETH_BSC, BSCTEST_NAME, BSCTEST_SYMBOL } from 'utils/bsctest/constants'
 
 export * from '@src/constants/tokens'
 
@@ -176,6 +176,9 @@ export class GpEther extends NativeCurrency {
     switch (chainId) {
       case SupportedChainId.XDAI:
         this._etherCache[chainId] = new GpEther(chainId, 18, XDAI_SYMBOL, XDAI_NAME)
+        break
+      case SupportedChainId.BSCTEST:
+        this._etherCache[chainId] = new GpEther(chainId, 18, BSCTEST_SYMBOL, BSCTEST_NAME)
         break
       default:
         this._etherCache[chainId] = new GpEther(chainId)

@@ -1,22 +1,27 @@
 import { ChainId } from '@uniswap/sdk'
 import { WETH9, Token } from '@uniswap/sdk-core'
 import { DAI_RINKEBY, USDC_RINKEBY, USDT_RINKEBY, WBTC_RINKEBY } from 'utils/rinkeby/constants'
-import { USDC_BSCTEST } from '@src/custom/utils/bsctest/constants'
 import { DAI, USDC as USDC_MAINNET, USDT, WBTC } from '@src/constants/tokens'
 import { USDC_XDAI, /*USDT_XDAI,*/ WBTC_XDAI, WETH_XDAI, WXDAI } from 'utils/xdai/constants'
+import { WETH_BSC, USDC_BSCTEST, USDT_BSCTEST } from 'utils/bsctest/constants'
 import { SupportedChainId } from 'constants/chains'
 import { V_COW_CONTRACT_ADDRESS, COW_CONTRACT_ADDRESS } from 'constants/index'
 
 import wxDaiLogo from 'assets/cow-swap/wxdai.png'
+
 import vCowLogo from 'assets/cow-swap/cow.svg'
 import gnoLogo from 'assets/cow-swap/gno.png'
 import usdcLogo from 'assets/cow-swap/usdc.png'
+import bnbLogo from 'assets/cow-swap/bnb.svg'
 
 export * from './tokensMod'
 
 function getTrustImage(mainnetAddress: string): string {
   return `https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/${mainnetAddress}/logo.png`
 }
+// function getBinanceTrustImage(mainnetAddress: string): string {
+//   return `https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/binance/assets/${mainnetAddress}/logo.png`
+// }
 
 const WETH_ADDRESS_MAINNET = WETH9[ChainId.MAINNET].address
 
@@ -152,4 +157,7 @@ export const ADDRESS_IMAGE_OVERRIDE = {
   [USDC_XDAI.address]: usdcLogo,
   // Mainnet
   [V_COW_TOKEN_MAINNET.address]: vCowLogo,
+  // BscTest
+  [WETH_BSC.address]: bnbLogo,
+  [USDT_BSCTEST.address]: usdcLogo,
 }

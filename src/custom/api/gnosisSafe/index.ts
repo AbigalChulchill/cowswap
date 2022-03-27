@@ -15,7 +15,7 @@ const CHAIN_SHORT_NAME: Partial<Record<number, string>> = {
   [ChainId.MAINNET]: 'eth', // https://github.com/ethereum-lists/chains/blob/master/_data/chains/eip155-1.json
   [ChainId.RINKEBY]: 'rin', // https://github.com/ethereum-lists/chains/blob/master/_data/chains/eip155-4.json
   [ChainId.XDAI]: 'xdai', // https://github.com/ethereum-lists/chains/blob/master/_data/chains/eip155-100.json
-  [ChainId.BSCTEST]: 'bscTest',
+  [ChainId.BSCTEST]: 'tBsc',
   // [ChainId.GÖRLI]: 'görli',
 }
 

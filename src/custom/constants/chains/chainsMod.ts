@@ -6,7 +6,7 @@
 import EthereumLogo from 'assets/cow-swap/network-mainnet-logo.svg' // mod
 import RinkebyLogo from 'assets/cow-swap/network-rinkeby-logo.svg' // mod
 import GnosisChainLogo from 'assets/cow-swap/network-gnosis-chain-logo.svg' // mod
-import bnbLogoUrl from 'assets/cow-swap/network-bsc-chain-logo.svg'
+import BscLogoUrl from 'assets/cow-swap/network-bsc-chain-logo.svg'
 
 export * from '@src/constants/chains'
 
@@ -195,7 +195,7 @@ export const CHAIN_INFO: ChainInfo = {
     explorer: 'https://explorer.binance.org/',
     infoLink: '',
     label: 'Bsc Test',
-    logoUrl: bnbLogoUrl,
+    logoUrl: BscLogoUrl,
     nativeCurrency: { name: 'BSC Testnet', symbol: 'tBNB', decimals: 18 },
   },
 }
