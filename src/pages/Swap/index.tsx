@@ -369,7 +369,7 @@ export default function Swap({ history }: RouteComponentProps) {
       />
       <NetworkAlert />
       <AppBody>
-        <SwapHeader allowedSlippage={allowedSlippage} />
+        <SwapHeader allowedSlippage={allowedSlippage} active="swap" />
         <Wrapper id="swap-page">
           <ConfirmSwapModal
             isOpen={showConfirm}

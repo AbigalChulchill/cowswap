@@ -74,6 +74,8 @@ export default function AffiliateStatusCheck() {
     try {
       // we first validate that the user hasn't already traded
       const userHasTrades = await retry(() => hasTrades(chainId, account), DEFAULT_RETRY_OPTIONS).promise
+      console.log(userHasTrades)
+
       if (userHasTrades) {
         return
       }

@@ -35,7 +35,7 @@ import VotePage from './Vote/VotePage'
 */
 import ReferralLinkUpdater from 'state/affiliate/updater'
 import URLWarning from 'components/Header/URLWarning'
-import Footer from 'components/Footer'
+// import Footer from 'components/Footer'
 import { BodyWrapper } from '.'
 import * as CSS from 'csstype' // mod
 
@@ -48,7 +48,7 @@ const AppWrapper = styled.div<Partial<CSS.Properties & AppWrapProps>>`
   flex-flow: column;
   align-items: flex-start;
   min-height: 100vh;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */ // mod
   &:after {
     content: '';
     position: fixed;
@@ -85,13 +85,13 @@ const HeaderWrapper = styled.div`
   justify-content: space-between;
 `
 
-const FooterWrapper = styled(HeaderWrapper)`
-  z-index: 1;
-  width: auto;
-`
+// const FooterWrapper = styled(HeaderWrapper)`
+//   z-index: 1;
+//   width: auto;
+// `
 
 const Marginer = styled.div`
-  margin-top: 5rem;
+  /* margin-top: 5rem; */
 `
 
 function TopLevelModals() {
@@ -166,9 +166,9 @@ export default function App(props?: { children?: ReactNode }) {
               </Switch>
               <Marginer />
             </BodyWrapper>
-            <FooterWrapper>
+            {/* <FooterWrapper>
               <Footer />
-            </FooterWrapper>
+            </FooterWrapper> */}
           </AppWrapper>
         </Web3ReactManager>
       </Suspense>

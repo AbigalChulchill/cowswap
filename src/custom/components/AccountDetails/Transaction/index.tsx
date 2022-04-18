@@ -104,7 +104,7 @@ function getActivityLinkUrl(params: {
   return undefined
 }
 
-function getActivityDerivedState(props: {
+export function getActivityDerivedState(props: {
   chainId?: number
   activityData: ActivityDescriptors | null
   allowsOffchainSigning: boolean

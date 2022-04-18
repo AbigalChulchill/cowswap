@@ -4,6 +4,7 @@ import { ButtonSize } from 'theme'
 // Override colors
 export interface Colors extends ColorsUniswap {
   bg8: Color
+  bg9: Color
   purple: Color
   yellow: Color
   redShade: Color
@@ -13,6 +14,7 @@ export interface Colors extends ColorsUniswap {
   blueShade2: Color
   blueShade3: Color
   blue2: Color
+  orange: Color
   success: Color
   danger: Color
   pending: Color
@@ -32,6 +34,7 @@ export interface Colors extends ColorsUniswap {
   infoText: Color
   warningText: Color
   errorText: Color
+  cardBackground: Color
   cardBorder: Color
   cardShadow1: Color
   cardShadow2: Color
@@ -81,6 +84,7 @@ declare module 'styled-components' {
       maxWidth: {
         normal: string
         content: string
+        full: string
       }
     }
     transaction: {

@@ -158,6 +158,7 @@ export default function AccountDetails({
   const activities =
     useMultipleActivityDescriptors({ chainId, ids: pendingTransactions.concat(confirmedTransactions) }) || []
   const activitiesGroupedByDate = groupActivitiesByDay(activities)
+
   const activityTotalCount = activities?.length || 0
 
   const handleDisconnectClick = () => {

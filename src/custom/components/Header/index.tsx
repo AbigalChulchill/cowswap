@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 import { SupportedChainId as ChainId } from 'constants/chains'
 // import { ExternalLink } from 'theme'
-import { useHistory, useLocation } from 'react-router-dom'
+// import { useHistory, useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 
 import HeaderMod, {
   Title as TitleMod,
@@ -15,7 +16,7 @@ import HeaderMod, {
   StyledNavLink as StyledNavLinkUni,
   StyledMenuButton,
   HeaderFrame,
-  UNIWrapper,
+  // UNIWrapper,
 } from './HeaderMod'
 import Menu from 'components/Menu'
 import { Moon, Sun } from 'react-feather'
@@ -44,15 +45,16 @@ import {
 import Modal from 'components/Modal'
 // import ClaimModal from 'components/claim/ClaimModal'
 import UniBalanceContent from 'components/Header/UniBalanceContent'
+// import CowClaimButton from 'components/CowClaimButton'
+// import { IS_CLAIMING_ENABLED } from 'pages/Claim/const'
 import CowClaimButton from 'components/CowClaimButton'
-import { IS_CLAIMING_ENABLED } from 'pages/Claim/const'
 
 export const NETWORK_LABELS: { [chainId in ChainId]?: string } = {
-  [ChainId.RINKEBY]: 'Rinkeby',
+  // [ChainId.RINKEBY]: 'Rinkeby',
   // [ChainId.ROPSTEN]: 'Ropsten',
   // [ChainId.GOERLI]: 'Görli',
   // [ChainId.KOVAN]: 'Kovan',
-  [ChainId.XDAI]: 'Gnosis Chain',
+  // [ChainId.XDAI]: 'Gnosis Chain',
   [ChainId.BSCTEST]: 'Bsc Test',
 }
 
@@ -217,11 +219,11 @@ export const UniIcon = styled.div`
   }
 `
 
-const VCowWrapper = styled(UNIWrapper)`
-  ${({ theme }) => theme.mediaWidth.upToSmall`
-    display: none;
-  `}
-`
+// const VCowWrapper = styled(UNIWrapper)`
+//   ${({ theme }) => theme.mediaWidth.upToSmall`
+//     display: none;
+//   `}
+// `
 
 export default function Header() {
   const location = useLocation()
@@ -244,8 +246,8 @@ export default function Header() {
   const openOrdersPanel = () => setIsOrdersPanelOpen(true)
   const isMenuOpen = useModalOpen(ApplicationModal.MENU)
 
-  const history = useHistory()
-  const handleOnClickClaim = () => history.push('/claim')
+  // const history = useHistory()
+  // const handleOnClickClaim = () => history.push('/claim')
 
   // Toggle the 'noScroll' class on body, whenever the orders panel or flyout menu is open.
   // This removes the inner scrollbar on the page body, to prevent showing double scrollbars.
@@ -269,7 +271,8 @@ export default function Header() {
           </Title>
           <HeaderLinks>
             <StyledNavLink to="/swap">Swap</StyledNavLink>
-            <StyledNavLink to="/profile">Profile</StyledNavLink>
+            {/* <StyledNavLink to="/profile">Profile</StyledNavLink> */}
+            <StyledNavLink to="/orderBook">OrderBook</StyledNavLink>
           </HeaderLinks>
         </HeaderRow>
 
@@ -278,16 +281,14 @@ export default function Header() {
             <NetworkSelector />
           </HeaderElement>
           <HeaderElement>
-            {IS_CLAIMING_ENABLED && (
-              <VCowWrapper>
-                <CowClaimButton
-                  isClaimPage={isClaimPage}
-                  account={account}
-                  chainId={chainId}
-                  handleOnClickClaim={handleOnClickClaim}
-                />
-              </VCowWrapper>
-            )}
+            {/* <VCowWrapper>
+              <CowClaimButton
+                isClaimPage={isClaimPage}
+                account={account}
+                chainId={chainId}
+                handleOnClickClaim={handleOnClickClaim}
+              />
+            </VCowWrapper> */}
 
             <AccountElement active={!!account} style={{ pointerEvents: 'auto' }}>
               {account && userEthBalance && (
@@ -308,7 +309,7 @@ export default function Header() {
               {darkMode ? <Moon size={20} /> : <Sun size={20} />}
             </StyledMenuButton>
           </HeaderElementWrap>
-          <Menu isClaimPage={isClaimPage} darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+          {/* <Menu isClaimPage={isClaimPage} darkMode={darkMode} toggleDarkMode={toggleDarkMode} /> */}
         </HeaderControls>
         {isOrdersPanelOpen && <OrdersPanel closeOrdersPanel={closeOrdersPanel} />}
       </HeaderModWrapper>

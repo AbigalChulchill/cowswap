@@ -5,7 +5,7 @@ import { ButtonSize } from 'theme'
 import { createGlobalStyle, css } from 'styled-components/macro'
 
 import { transparentize } from 'polished'
-import { cowSwapBackground, cowSwapLogo } from 'theme/cowSwapAssets'
+// import { cowSwapBackground, cowSwapLogo } from 'theme/cowSwapAssets'
 
 import Cursor1 from 'assets/cow-swap/cursor1.gif'
 import Cursor2 from 'assets/cow-swap/cursor2.gif'
@@ -37,13 +37,14 @@ export function colors(darkMode: boolean): Colors {
 
     // ****** backgrounds / greys ******
     bg1: darkMode ? '#163861' : '#D5E9F0',
-    bg2: darkMode ? '#c5daef' : '#ffffff',
+    bg2: darkMode ? '#000000' : '#ffffff',
     bg3: darkMode ? '#163861' : '#d5e8f0',
     bg4: darkMode ? '#021E34' : '#ffffff',
     bg5: darkMode ? '#1d4373' : '#D5E9F0',
     bg6: darkMode ? '#163861' : '#b0dfee',
     bg7: darkMode ? '#1F4471' : '#CEE7EF',
     bg8: darkMode ? '#021E34' : '#152943',
+    bg9: darkMode ? '#16171A' : '#16171A',
 
     // ****** specialty colors ******
     advancedBG: darkMode ? '#163861' : '#d5e8f0',
@@ -66,6 +67,7 @@ export function colors(darkMode: boolean): Colors {
     blue2: darkMode ? '#a3beff' : '#0c40bf',
     purple: '#8958FF',
     yellow: '#fff6dc',
+    orange: '#FF784A',
     greenShade: '#376c57',
     blueShade: '#0f2644',
     blueShade2: '#011e34',
@@ -80,6 +82,7 @@ export function colors(darkMode: boolean): Colors {
     // ****** other ******
     border: darkMode ? '#021E34' : '#000000',
     border2: darkMode ? '#254F83' : '#afcbda',
+    cardBackground: darkMode ? '#142642' : 'rgb(255 255 255 / 85%)',
     cardBorder: darkMode ? '#021E34' : 'rgba(255, 255, 255, 0.5)',
     cardShadow1: darkMode ? '#4C7487' : '#FFFFFF',
     cardShadow2: darkMode ? 'rgba(1, 10, 16, 0.15)' : 'rgba(11, 37, 53, 0.93)',
@@ -107,21 +110,24 @@ export function colors(darkMode: boolean): Colors {
 }
 
 export function themeVariables(darkMode: boolean, colorsTheme: Colors) {
+  /* background: url(data:image/svg+xml;base64,${cowSwapBackground(darkMode)}) no-repeat 100% / cover fixed,
+          ${darkMode
+          ? 'linear-gradient(180deg,rgba(20, 45, 78, 1) 10%, rgba(22, 58, 100, 1) 30%)'
+          : 'linear-gradient(180deg,rgba(164, 211, 227, 1) 5%, rgba(255, 255, 255, 1) 40%)'}; */
   return {
     body: {
       background: css`
-        background: rgba(164, 211, 227, 1);
-        background: url(data:image/svg+xml;base64,${cowSwapBackground(darkMode)}) no-repeat 100% / cover fixed,
-          ${darkMode
-            ? 'linear-gradient(180deg,rgba(20, 45, 78, 1) 10%, rgba(22, 58, 100, 1) 30%)'
-            : 'linear-gradient(180deg,rgba(164, 211, 227, 1) 5%, rgba(255, 255, 255, 1) 40%)'};
+        /* background: rgba(164, 211, 227, 1); */
+        /* background: ${darkMode
+          ? 'linear-gradient(180deg,rgba(20, 45, 78, 1) 10%, rgba(22, 58, 100, 1) 30%)'
+          : 'linear-gradient(180deg,rgba(164, 211, 227, 1) 5%, rgba(255, 255, 255, 1) 40%)'}; */
         background-attachment: fixed;
         scrollbar-color: ${colorsTheme.scrollbarThumb} ${colorsTheme.scrollbarBg};
       `,
     },
     logo: {
-      src: `data:image/svg+xml;base64,${cowSwapLogo(darkMode)}`,
-      srcIcon: `data:image/svg+xml;base64,${cowSwapLogo(darkMode, true)}`,
+      // src: `data:image/svg+xml;base64,${cowSwapLogo(darkMode)}`,
+      // srcIcon: `data:image/svg+xml;base64,${cowSwapLogo(darkMode, true)}`,
       alt: 'CowSwap Logo',
       width: '208px',
       height: '50px',
@@ -155,6 +161,7 @@ export function themeVariables(darkMode: boolean, colorsTheme: Colors) {
       maxWidth: {
         normal: '460px',
         content: '680px',
+        full: '100%',
       },
     },
     transaction: {

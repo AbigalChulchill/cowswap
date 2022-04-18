@@ -126,3 +126,8 @@ export function formatOrderId(orderId: string): string {
 export function basisPointsToPercent(num: number): Percent {
   return new Percent(JSBI.BigInt(num), JSBI.BigInt(10000))
 }
+
+export function formatNumber(num: string): string {
+  const newNum = Math.round(Number(num) * 100) / 100
+  return newNum.toString()
+}

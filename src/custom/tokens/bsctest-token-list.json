@@ -10,9 +10,17 @@
   "timestamp": "2021-02-22T13:09:54.363Z",
   "tokens": [
     {
+      "name": "BUSD",
+      "chainId": 4,
+      "symbol": "BUSD",
+      "decimals": 6,
+      "address": "0x78867BbEeF44f2326bF8DDd1941a4439382EF2A7",
+      "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xdAC17F958D2ee523a2206206994597C13D831ec7/logo.png"
+    },
+    {
       "name": "Wrapped Ether",
       "chainId": 97,
-      "symbol": "WETH",
+      "symbol": "WBNB",
       "decimals": 18,
       "address": "0xae13d989dac2f0debff460ac112a837c89baa7cd",
       "logoURI": "https://bscscan.com/images/svg/brands/bnb.svg?v=1.3"

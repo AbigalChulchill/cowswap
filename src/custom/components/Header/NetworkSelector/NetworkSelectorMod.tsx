@@ -87,7 +87,7 @@ const FlyoutRow = styled.div<{ active: boolean }>`
   }
   transition: background 0.13s ease-in-out;
 `
-const FlyoutRowActiveIndicator = styled.div<{ active: boolean }>`
+export const FlyoutRowActiveIndicator = styled.div<{ active: boolean }>`
   background-color: ${({ active, theme }) => (active ? theme.green1 : '#a7a7a7')};
   border-radius: 50%;
   height: 9px;
@@ -138,9 +138,9 @@ const SelectorWrapper = styled.div`
     position: relative;
   }
 `
-const StyledChevronDown = styled(ChevronDown)`
-  width: 12px;
-`
+// const StyledChevronDown = styled(ChevronDown)`
+//   width: 12px;
+// `
 // const BridgeText = ({ chainId }: { chainId: SupportedL2ChainId }) => {
 //   switch (chainId) {
 //     case SupportedChainId.ARBITRUM_ONE:
@@ -170,7 +170,7 @@ export default function NetworkSelector() {
   const { account, chainId, library } = useActiveWeb3React()
   const {
     callback: networkCallback,
-    conditionalToggle,
+    // conditionalToggle,
     chainInfo: info,
     mainnetInfo,
     isUnsupportedChain,
@@ -228,10 +228,11 @@ export default function NetworkSelector() {
 
   return (
     <SelectorWrapper ref={node as any}>
-      <SelectorControls onClick={conditionalToggle} interactive={showSelector}>
+      {/* <SelectorControls onClick={conditionalToggle} interactive={showSelector}> */}
+      <SelectorControls interactive={showSelector}>
         <SelectorLogo interactive={showSelector} src={info.logoUrl || mainnetInfo.logoUrl} />
         <SelectorLabel>{info.label}</SelectorLabel>
-        {showSelector && <StyledChevronDown />}
+        {/* {showSelector && <StyledChevronDown />} */}
       </SelectorControls>
       {open && (
         <FlyoutMenu>
